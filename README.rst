@@ -22,6 +22,15 @@ Copy the plug-ins to the munin plugin directory, e.g ``/etc/munin/plugins/``.
 
 `rabbitmq_messages_incoming_rate` plugin requires separate configuration because it uses RabbitMQ's REST API.
 
+Quick installation instructions for Debian / Ubuntu::
+
+    cd /usr/share/munin/plugins
+    for i in rabbitmq_connections rabbitmq_consumers rabbitmq_messages rabbitmq_messages_unacknowledged rabbitmq_messages_unacknowledged rabbitmq_queue_memory ; do
+        wget "https://raw.githubusercontent.com/ask/rabbitmq-munin/master/$i"
+        chmod u+x $i
+        ln -s /usr/share/munin/plugins/$i /etc/munin/plugins/
+    done
+
 Granting Permissions
 ====================
 
